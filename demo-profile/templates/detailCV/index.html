@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %} danh muc {%endblock%}
+{%block content%}
+<center><h1>My Curriculum Vitae </h1></center>
+{% if f %}
+<ul style="list-style:none;">
+    {% for item in f %}
+    <li>
+        <a href="" style="text-decoration:none;"><h4>1. Detail Person</h4></a>
+        <ul style="border-bottom:2px black solid;">
+            <li>Fullname: {{item.detailperson.fullname}}</li>
+            <li>Age: {{item.detailperson.dateofbirth}}</li>
+            <li>Telephone: {{item.detailperson.telephone}}</li>
+            <li>Email: {{item.detailperson.email}}</li>
+            <li>Adress: {{item.detailperson.address}}</li>
+            <li>Apply: {{item.detailperson.apply}}</li>
+        </ul>
+    </li>
+    <li>
+        <a href="" style="text-decoration:none;"><h4>2. My Project</h4></a>
+        <ol>
+            <li>
+                <h5>{{item.project.nameProject}}</h5>
+                <ul style="border-bottom:2px black solid;">
+                    <li>Name customer: {{item.project.customer}}</li>
+                    <li>Work: {{item.project.job}}</li>
+                    <li>Time: {{item.project.dateTime}}</li>
+                    <li>Contribute: {{item.project.role}}</li>
+                    <li>Technology used: {{item.project.technology}}</li>
+                </ul>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="" style="text-decoration:none;"><h4>3. Education </h4></a>
+        <h4> List of university</h4>
+        <ul style="border-bottom:2px black solid;">
+            <ol>
+                <li><h5>{{item.education.university.nameUni}}</h5></li>
+                <ul>
+                    <li>{{item.education.country}}</li>
+                    <li>{{item.education.university.major}}</li>
+                    <li>{{item.education.university.CPA}}</li>
+                    <li>{{item.education.university.time_at_started}} - {{item.education.university.time_at_finished}}
+                    </li>
+                </ul>
+            </ol>
+        </ul>
+    </li>
+    <li>
+        <a href="" style="text-decoration:none;"><h4>4. Skill </h4></a>
+        <ul>
+            <li style="">
+                {{item.skill}}
+            </li>
+        </ul>
+        <ul style="border-bottom:2px black solid;">
+        </ul>
+    </li>
+    <li>
+        <a href="" style="text-decoration:none;"><h4>5. Certification </h4></a>
+        <ul>
+            <li style="">{{item.certification}}</li>
+        </ul>
+        <ul style="border-bottom:2px black solid;">
+        </ul>
+    </li>
+    {%endfor%}
+</ul>
+
+{%else%}
+{%endif%}
+{%endblock%}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{%block title%} login {%endblock%}
+{%block content%}
+
+<center style="margin-top:12%;">
+    <h1 style="color:green; font-family:segoe-ui light;"> WELCOME LADY AND GENTLEMAN </h1>
+    <table style="margin:auto;">
+        <form action="" method="post">
+            {% csrf_token %}
+            username <input type="text" name="username" placeholder="username"> <br/>
+            password <input type="password" name="password" placeholder="password" style="margin-top:5px;"> <br/>
+            <input type="submit" value="login" style="margin-top:5px;"> <br/>
+        </form>
+    </table>
+
+</center>
+
+{%endblock%}
