@@ -7,5 +7,6 @@ class person(models.Model):
     university = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
+    tel=models.CharField(max_length=100)
     def __str__(self):
         return self.fullname
