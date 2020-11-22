@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Contact {%endblock%}
+{% block content %}
+<h2>Contact Information</h2>
+<ul>
+    {% for item in p %}
+    <li> <span style="font-weight:600;">Mr.</span> <span style="font-family:segoe-ui;font-weight:600;font-size:18px;">{{item.fullname}}</span> </li>
+    <li><span style="font-weight:600;">Address:</span>  <span style="font-family:segoe-ui;font-weight:600;font-size:18px;">{{item.address}}</span></li>
+    <li><span style="font-weight:600;">Email:</span> <a href="" style="font-family:segoe-ui;font-weight:600;font-size:18px;">{{item.email}}</a></li>
+    <li><span style="font-weight:600;">Tel:</span><span style="font-family:segoe-ui;font-weight:500;font-size:18px;">{{item.tel}}</span> </li>
+    {%endfor%}
+</ul>
+{% endblock %}

@@ -21,5 +21,8 @@ from disploy import urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
+    path('studying/', TemplateView.as_view(template_name='studying.html'), name='study'),
+    path('activities/', TemplateView.as_view(template_name='activities.html'), name='active'),
     path('', include("disploy.urls", namespace="disploy")),
+    path('',include("detailPerson.urls")),
 ]

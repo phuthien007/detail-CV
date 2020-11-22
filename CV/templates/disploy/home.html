@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{%block content%}
+<div class="person">
+    {% if per %}
+    {% for p in per %}
+    <ul>
+        <li>{{p.fullname}}</li>
+        <li><a href="https://qldt.hust.edu.vn">{{p.university}}</a></li>
+        <li>
+            Address: <a
+                href="https://www.google.com/maps/place/48+Ng%C3%B5+167,+Qu%E1%BB%B3nh+L%C3%B4i,+Hai+B%C3%A0+Tr%C6%B0ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@21.0017469,105.8534831,17z/data=!3m1!4b1!4m5!3m4!1s0x3135ac0b83050635:0x2ebc5f5f5faa3443!8m2!3d21.0017469!4d105.8556718">{{p.address}}</a>
+        </li>
+        <li> Email: <a href="">{{p.email}}</a></li>
+        <li>Tel: {{p.tel}}</li>
+    </ul>
+    {%endfor%}
+    {%else%}
+    <p>no information</p>
+    {%endif%}
+</div>
+<div class="position">
+    <h4>CURRENT POSITION</h4>
+    <ul>
+        <li><p> student of Hanoi university of science and technology</p></li>
+    </ul>
+</div>
+<div class="education">
+    <h4>EDUCATION</h4>
+    {% if edu %}
+    {% for item in edu %}
+    <ul>
+        <li>{{ item.yearStart }} - {{ item.yearFinish }}: {{ item.degree }}, {{ item.major }}, {{item.country}}</li>
+    </ul>
+    {%endfor%}
+    {%else%}
+    <p>No education</p>
+    {% endif %}
+</div>
+<div class="project">
+    <h4>Project</h4>
+    {% if pro %}
+        {%for item in pro%}
+    <ul>
+        <li>{{ item.name }}: {{ item.role }}, {{item.time}}</li>
+    </ul>
+        {%endfor%}
+    {%else%}
+    <p>No project</p>
+    {%endif%}
+</div>
+{%endblock%}
